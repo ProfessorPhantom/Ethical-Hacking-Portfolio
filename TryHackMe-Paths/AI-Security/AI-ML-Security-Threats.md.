@@ -1,57 +1,75 @@
 
 # Path: AI Security
-## Room: AI/ML Security Threats
+## Room: AI/ML Security Threats (Verified Source of Truth)
 
-### 0x01: Overview of AI Attack Surfaces
-Traditional security focuses on the "Software Development Life Cycle" (SDLC). AI security expands this to the **Data Life Cycle**. Attacks can happen during **Training** (poisoning the brain) or **Inference** (tricking the brain while it's working).
-
----
-
-### 0x02: Task 3 - Adversarial Attacks (Evasion)
-This is the most common "AI Hack." It involves subtly changing the input (adding "noise") so the AI misclassifies it. To a human, a stop sign looks like a stop sign; to a tricked AI, it looks like a speed limit sign.
-
-* **Key Concept:** Adversarial Example (adding noise to input).
-* **The Answer:** What is the term for the process of adding small, often imperceptible, perturbations to input data to deceive an AI model?
-    * **Answer:** `Adversarial Attack` (or `Evasion Attack`)
+### 0x01: Introduction
+This room bridges the gap between traditional security and the new AI-driven landscape. It covers the building blocks of AI, the rise of LLMs, and how the threat landscape is evolving.
 
 ---
 
-### 0x03: Task 4 - Data Poisoning
-This happens during the **Training Phase**. If an attacker can inject malicious data into the training set, they can create a "backdoor." For example, teaching a malware scanner that a specific string of characters is always "safe."
+### 0x02: Task 2 - The Building Blocks of AI
+Before attacking AI, we must understand how it learns. This task focuses on the different categories of Machine Learning and the structure of Neural Networks.
 
-* **Key Concept:** Garbage In = Garbage Out.
-* **The Answer:** Which type of attack involves injecting malicious data into the training set to influence the model’s behavior?
-    * **Answer:** `Data Poisoning`
 
----
 
-### 0x04: Task 5 - Model Inversion & Data Extraction
-This is a privacy-centric attack. By querying a model thousands of times, an attacker can reconstruct the data used to train it—potentially leaking Social Security numbers or medical records.
+[Image of neural network layers]
 
-* **The Answer:** What is the technique used to reconstruct training data by analyzing a model's outputs?
-    * **Answer:** `Model Inversion`
 
----
-
-### 0x05: Task 6 - AI Hallucinations as a Vulnerability
-Hallucinations aren't just "bugs"; they are security risks. If a developer trusts an AI's output to generate code or SQL queries, a hallucination can lead to **Indirect Prompt Injection**.
-
-* **The Answer:** What is the term for when an LLM generates confident but false or misleading information?
-    * **Answer:** `Hallucinations`
+**Task Answers:**
+1. What category of machine learning combines both labelled and unlabelled data?
+   * **Answer:** `Semi-supervised Learning`
+2. What is the first layer in a neural network that handles incoming raw data?
+   * **Answer:** `Input Layer`
+3. Which learning method does not require human-labeled data and can extract features from raw, unstructured input?
+   * **Answer:** `Deep Learning`
+4. What are the weighted connections between nodes in a neural network meant to simulate in the human brain?
+   * **Answer:** `Synapses`
 
 ---
 
-### 0x06: Lab Flag (The Practical)
-*Navigate to the lab machine provided in the room.*
-1.  **Scenario:** Perform the adversarial attack on the image classifier.
-2.  **Action:** Upload the "perturbed" image provided in the lab files.
-3.  **Result:** The model misidentifies the "Malware" as "Safe."
-* **The Flag:** `THM{AI_SECURITY_BASICS_MASTERED}` 
-    *(Note: Double-check the flag in your specific instance as THM sometimes rotates these).*
+### 0x03: Task 3 - Large Language Models (LLMs)
+This task covers the "Transformer" revolution that made tools like ChatGPT possible.
+
+**Task Answers:**
+1. What type of AI model enabled major advancements in ChatGPT and similar tools?
+   * **Answer:** `Large Language Models`
+2. What is the first training stage where an LLM processes massive amounts of data?
+   * **Answer:** `Pre-training`
+3. What type of neural network introduced by Google in 2017 powers modern LLMs?
+   * **Answer:** `Transformer`
 
 ---
 
-### 0x07: Remediation for the Enterprise
-1.  **Adversarial Training:** Include adversarial examples in the training set so the model learns to recognize the "noise."
-2.  **Data Sanitization:** Rigorous scrubbing of training data to prevent poisoning.
-3.  **Output Filtering:** Never let AI output execute directly (e.g., in a terminal or database) without a human-in-the-loop.
+### 0x04: Task 4 - AI Security Threats
+This is the core of the room. It introduces the **MITRE ATLAS** framework and new attack vectors like Model Theft and Deepfakes.
+
+**Task Answers:**
+1. What framework was developed by MITRE to guide the understanding of AI-specific cyber threats?
+   * **Answer:** `ATLAS`
+2. What type of attack involves cloning an AI model by interacting with its API?
+   * **Answer:** `Model Theft`
+3. What generative AI technique can replicate a person's voice or appearance with high realism?
+   * **Answer:** `DeepFake`
+4. What common social engineering attack has become harder to detect due to AI-generated fluent and convincing messages?
+   * **Answer:** `Phishing`
+
+---
+
+### 0x05: Task 5 - Defensive AI
+How defenders are using AI to fight back, specifically in threat hunting and incident response speed.
+
+**Task Answers:**
+1. According to IBM, how many days faster does AI help identify and contain breaches?
+   * **Answer:** `108`
+2. What cybersecurity task benefits from AI helping to imagine attacker behavior we might not consider?
+   * **Answer:** `Threat Hunting`
+3. Explainability tools such as SHAP and LIME help with what?
+   * **Answer:** `Model Monitoring`
+
+---
+
+### 0x06: Task 6 - Practical
+*Launch the lab machine and complete the interactive assessment.*
+1. Follow the prompts in the simulation to identify the correct threat categories.
+* **The Flag:** `THM{YOU_HAVE_BEEN_AI_CERTIFIED}` 
+   *(Note: Always verify the flag in your active instance).*
