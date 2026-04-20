@@ -1,4 +1,7 @@
 
+Path: AI Security
+Room: ConTAInment (Verified Source of Truth)
+
 Incident Response Report: West Tech ContAInment Breach
 
 Investigator: Joshua Smith
